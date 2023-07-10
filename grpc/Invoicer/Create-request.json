@@ -1,0 +1,8 @@
+{
+  "amount": {
+    "amount": "1500",
+    "currency": "USD"
+  },
+  "from": "me",
+  "to": "me yesterday"
+}

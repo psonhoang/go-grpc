@@ -1,0 +1,19 @@
+{
+  "id": "0c4b593d-6d35-4207-945f-90f6c2fdaf8f",
+  "importStreams": [
+    {
+      "id": "58958ba9-09b2-4e3e-8b52-ed0a95880685",
+      "name": "proto-file",
+      "importerName": "ProtoFile",
+      "createMissingOperations": true,
+      "options": {
+        "files": [
+          "../invoicer.proto"
+        ],
+        "importPaths": []
+      }
+    }
+  ],
+  "authConfigs": [],
+  "certificates": []
+}
