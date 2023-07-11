@@ -14,9 +14,21 @@ type myInvoicerServer struct {
 }
 
 func (s myInvoicerServer) Create(ctx context.Context, req *invoicer.CreateRequest) (*invoicer.CreateResponse, error) {
+	taxAmount := invoicer.Amount{
+		Amount:   req.Amount.GetAmount() * 11 / 100,
+		Currency: req.Amount.GetCurrency(),
+	}
+
+	tipAmount := invoicer.Amount{
+		Amount:   taxAmount.GetAmount() * 18 / 100,
+		Currency: taxAmount.GetCurrency(),
+	}
+
 	return &invoicer.CreateResponse{
-		Pdf:  req.GetFrom(),
-		Docx: req.GetTo(),
+		From: req.GetFrom(),
+		To:   req.GetTo(),
+		Tax:  &taxAmount,
+		Tip:  &tipAmount,
 	}, nil
 }
 

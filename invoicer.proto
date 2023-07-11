@@ -2,7 +2,7 @@ syntax = "proto3";
 option go_package = "github.com/psonhoang/go-grpc/invoicer";
 
 message Amount {
-    int64 amount = 1;   // variable = position in object
+    float amount = 1;   // variable = position in object
     string currency = 2;    
 }
 
@@ -14,8 +14,11 @@ message CreateRequest {
 }
 
 message CreateResponse {
-    string pdf = 1;
-    string docx = 2;
+    string from = 1;
+    string to = 2;
+    Amount tax = 3; 
+    Amount tip = 4;
+    Amount total = 5;
 }
 
 service Invoicer {
